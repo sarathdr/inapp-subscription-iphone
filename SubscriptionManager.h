@@ -26,6 +26,7 @@
 @property (nonatomic,retain) NSString *callbackId;
 
 -(void) subscribe :(CDVInvokedUrlCommand*)command;
+-(void)updateSubscriptionNotifyStatus:(CDVInvokedUrlCommand*)command;
 -(void) dealloc;
 
 @end

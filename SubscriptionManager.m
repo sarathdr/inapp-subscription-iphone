@@ -352,6 +352,17 @@ static bool hasAddObserver=NO;
     
 }
 
+- (void)updateSubscriptionNotifyStatus:(CDVInvokedUrlCommand*)command;
+
+{
+    
+    [[NSUserDefaults standardUserDefaults] setValue:@"SUBSCRIPTION_NOTIFIED" forKey:@"statusNotify" ];
+    CDVPluginResult* pluginResult = nil;
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"success"];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        
+}
+
 
 
 - (void)dealloc
